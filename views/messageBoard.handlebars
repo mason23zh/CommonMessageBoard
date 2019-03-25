@@ -1,0 +1,33 @@
+<h3>Message Board</h3>
+{{> _menu}}
+{{#each user}}
+  {{#if messages}}
+    {{#each messages}}
+      <div class="list-group">
+      <a href="#" class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{title}}</h5>
+        <small>{{timeStamp}}</small>
+        </div>
+          <p class="mb-1">{{message}}</p>
+        </a>
+      </div>
+      {{/each}}
+    {{/if}}
+{{/each}}
+<div class="card card-body">
+<form action='/processAddMessage' method='POST'>
+  <div class="form-group">
+    <label>Message Title</label>
+    <input type="text" class="form-control" name='title'>
+  </div>
+  <div class="form-group">
+    <label>Message Content</label>
+    <textarea class="form-control" name='content'></textarea>
+  </div>
+  <div class="form-group form-check" align="center">
+            <button type="submit" class="btn btn-primary" name="buttonVar" value="post">Post</button>
+        </div>
+  </div>
+</form>
+</div>

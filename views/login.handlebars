@@ -1,0 +1,24 @@
+
+<div class="container">
+    <h2 align="center">Log In</h2>
+    {{#each errors}}
+        <div class="alert alert-danger">{{text}}</div>
+    {{else}}
+    {{/each}}
+    <form action="/processLogin" method="POST">
+        <div class="form-group">
+            <label for="exampleInputEmail1">User Name</label>
+            <input type="text" class="form-control" id="user-name" name="userName" aria-describedby="emailHelp"
+                   placeholder="Enter User Name" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="input-password" name="userPassword"
+                   placeholder="Password" required>
+        </div>
+        <div class="form-group form-check" align="center">
+        <button type="submit" class="btn btn-primary" name="buttonVar" value="login">Login</button>
+        </div>
+    </form>
+    <p>Does not have account? <a href="register">Register Here</a></p>
+</div>

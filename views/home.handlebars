@@ -1,0 +1,15 @@
+{{> _menu}}
+<div class="container">
+<h1>List all content in database</h1>
+{{#each user}}
+    <h3>{{userName}}</h3>
+    <p>
+        User Password: {{passWord}}<br />
+        Admin: {{isAdmin}}<br />
+    </p>
+    {{#each messages}}
+        Message: {{message}}<br />
+        Time Stamp: {{timeStamp}}<br />
+    {{/each}}
+{{/each}}
+</div>
